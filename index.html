@@ -158,6 +158,37 @@
     }
     .case-list{margin:14px 0 0;padding-left:18px;color:#30425f}
     .case-list li{margin-bottom:8px}
+
+    .ai-lab{
+      position:relative;overflow:hidden
+    }
+    .ai-lab::before{
+      content:"";position:absolute;inset:0 0 auto 0;height:220px;
+      background:linear-gradient(135deg,rgba(25,54,92,.08),rgba(229,138,44,.08));
+      pointer-events:none
+    }
+    .ai-grid{
+      position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px
+    }
+    .video-card{
+      overflow:hidden;padding:0;background:#fff;border:1px solid var(--line);
+      border-radius:24px;box-shadow:var(--shadow);transition:.22s ease
+    }
+    .video-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(20,34,61,.14)}
+    .video-frame{
+      position:relative;aspect-ratio:9/16;background:#0f1e33;overflow:hidden
+    }
+    .video-frame video{
+      display:block;width:100%;height:100%;object-fit:cover;background:#0f1e33
+    }
+    .video-content{padding:20px}
+    .video-content h3{margin:0 0 8px;font-size:20px;line-height:1.3}
+    .video-content p{margin:0;color:var(--muted);font-size:14px}
+    .video-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .video-note{
+      position:relative;margin-top:18px;padding:16px 18px;border:1px dashed #bdc9da;
+      border-radius:16px;background:rgba(255,255,255,.7);color:var(--muted);font-size:14px
+    }
     .timeline-card{
       border-left:5px solid var(--accent)
     }
@@ -192,14 +223,14 @@
       padding:26px 0 40px;color:var(--muted);font-size:14px
     }
     @media (max-width: 1080px){
-      .hero-grid,.project-grid,.offer-grid,.case-grid,.timeline,.proof-grid{grid-template-columns:1fr 1fr}
+      .hero-grid,.project-grid,.offer-grid,.case-grid,.timeline,.proof-grid,.ai-grid{grid-template-columns:1fr 1fr}
       .offer-grid .offer-card:last-child,.case-grid .case-card:last-child,.proof-grid .proof-card:last-child{grid-column:auto}
     }
     @media (max-width: 760px){
       .nav-inner{align-items:flex-start;flex-direction:column}
       .nav-links{display:none}
       .hero{padding-top:34px}
-      .hero-grid,.project-grid,.offer-grid,.proof-grid,.case-grid,.timeline,.hero-bullets,.metric-grid{grid-template-columns:1fr}
+      .hero-grid,.project-grid,.offer-grid,.proof-grid,.case-grid,.timeline,.ai-grid,.hero-bullets,.metric-grid{grid-template-columns:1fr}
       .hero-main,.hero-side,.card,.cta-box{padding:24px}
       .section-title{font-size:28px}
       h1{font-size:40px}
@@ -220,6 +251,7 @@
         <a href="#offers">我能幫你做什麼</a>
         <a href="#proof">關鍵成果</a>
         <a href="#cases">代表案例</a>
+        <a href="#ai-lab">AI 影音作品</a>
         <a href="#experience">經歷</a>
         <a href="#contact">合作方式</a>
       </div>
@@ -230,7 +262,7 @@
   <header class="hero">
     <div class="wrap hero-grid">
       <div class="hero-main">
-        <div class="eyebrow">Growth × Data × Content × Platform Governance</div>
+        <div class="eyebrow">Growth × Data × Content × AI Creative</div>
         <h1>I design growth systems.</h1>
         <p class="hero-sub">我幫企業降低決策風險，讓行銷從曝光工作，變成可預測的成長系統。</p>
         <p class="hero-copy">
@@ -396,6 +428,84 @@
             <li>讓內容不只是曝光，而是持續資產</li>
           </ul>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai-lab" class="ai-lab">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">AI Creative Lab</div>
+          <h2 class="section-title">AI 影音與內容實驗室</h2>
+        </div>
+        <p class="section-desc">
+          我不只使用 AI 工具，而是把策略、腳本、視覺生成、動畫、剪輯與發佈流程整合成可落地的內容生產系統。
+        </p>
+      </div>
+
+      <div class="ai-grid">
+        <article class="video-card">
+          <div class="video-frame">
+            <!-- 將 src 換成你的實際影片檔案，例如 videos/mina-ai-koc.mp4 -->
+            <video controls playsinline preload="metadata" poster="images/mina-ai-koc-cover.jpg">
+              <source src="https://youtube.com/shorts/3_2tiskrs0I" type="video/mp4">
+              您的瀏覽器不支援影片播放。
+            </video>
+          </div>
+          <div class="video-content">
+            <h3>Mina｜AI KOC 品牌短影音</h3>
+            <p>以虛擬人物完成腳本、場景、產品敘事與直式短影音製作，模擬品牌 KOC 的內容溝通流程。</p>
+            <div class="video-meta">
+              <span class="pill">Google Flow</span>
+              <span class="pill">AI Avatar</span>
+              <span class="pill">Short-form Video</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <!-- 將 src 換成你的實際影片檔案，例如 videos/typhoon-animation.mp4 -->
+            <video controls playsinline preload="metadata" poster="images/typhoon-cover.jpg">
+              <source src="https://www.facebook.com/share/r/1GPnUn4nZV/" type="video/mp4">
+              您的瀏覽器不支援影片播放。
+            </video>
+          </div>
+          <div class="video-content">
+            <h3>巴威颱風｜AI 動畫敘事</h3>
+            <p>將即時話題轉化成具角色感與娛樂性的動畫內容，展現從創意概念到社群影片的快速製作能力。</p>
+            <div class="video-meta">
+              <span class="pill">Visual Storytelling</span>
+              <span class="pill">Animation</span>
+              <span class="pill">Social Content</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="video-frame">
+            <!-- 將 src 換成你的實際影片檔案，例如 videos/wine-event.mp4 -->
+            <video controls playsinline preload="metadata" poster="images/wine-event-cover.jpg">
+              <source src="https://youtube.com/shorts/gpP41eDtexU" type="video/mp4">
+              您的瀏覽器不支援影片播放。
+            </video>
+          </div>
+          <div class="video-content">
+            <h3>葡萄酒展｜AI 活動宣傳片</h3>
+            <p>結合品牌內容、人物角色、場景轉換與旁白，製作可用於展會與社群宣傳的完整短影音。</p>
+            <div class="video-meta">
+              <span class="pill">Brand Video</span>
+              <span class="pill">Event Marketing</span>
+              <span class="pill">AI Production</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="video-note">
+        <strong>製作流程：</strong>
+        Strategy → Script → Storyboard → AI Visual / Video Generation → Voice & Music → Editing → Social Distribution
       </div>
     </div>
   </section>
